@@ -31,6 +31,16 @@ extend, thus some planned features include:
 - User-defined extensions (for e.g. for competitions)
 - Updates from certified developers
 
+### Pets
+
+Pet images are generated using stable diffusion with [DiffusionBee](https://diffusionbee.com/) as frontend client.
+
+Prompt: `cute and playful unusual animal with large expressive eyes,fur,
+full-sized with visible body and face, happy, photorealistic, unreal engine,
+octane render, (pokemon-like)`
+Negative prompt: `scary, opened mouth, teeth, pokemon, cat, dog, wolf`
+
 ## References
 
 - [Upgradable contracts](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable).
+
