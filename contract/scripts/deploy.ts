@@ -1,13 +1,29 @@
-import { ethers } from "hardhat";
+import { ethers, upgrades } from "hardhat";
 
 async function main() {
-  const contract = await ethers.deployContract("Main", [], {});
+  // Deploying main contract
+  const Ethogochi = await ethers.getContractFactory("Ethogochi");
+  const ethogochiInstance = await upgrades.deployProxy(Ethogochi, [], {
+    initializer: "initialize",
+  });
+  const ethogochi = await ethogochiInstance.waitForDeployment();
+  const ethogochiAddress = await ethogochiInstance.getAddress();
+  console.log("Ethogochi --> " + ethogochiAddress);
 
-  await contract.waitForDeployment();
+  // Depoloying race competition
+  const raceCompetitionInstance = await ethers.deployContract("RaceCompetition");
+  const raceCompetition = await raceCompetitionInstance.waitForDeployment();
+  const raceCompetitionAddress = await raceCompetitionInstance.getAddress();
+  console.log("RaceCompetition --> " + raceCompetitionAddress);
+
+  await ethogochi.addCompetition(raceCompetitionAddress)
+
+  // TODO: remove
+  // checking if race competition exists
+  console.log(await ethogochi.competitions(0))
+
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
