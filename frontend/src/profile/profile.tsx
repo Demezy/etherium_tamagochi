@@ -1,13 +1,15 @@
-import { useAccount, useConnect, useEnsName } from 'wagmi'
-import { InjectedConnector } from 'wagmi/connectors/injected'
+import useMetaMask from "../hooks/useMetaMask";
 
-export default function Profile() {
-    const { address, isConnected } = useAccount()
-    const { data: ensName } = useEnsName({ address })
-    const { connect } = useConnect({
-        connector: new InjectedConnector(),
-    })
+const Profile: React.FC = () => {
+  const { address, connectMetaMask } = useMetaMask();
 
-    if (isConnected) return <div>Connected to {ensName ?? address}</div>
-    return <button onClick={() => connect()}>Connect Wallet</button>
-}
+  return (
+    <div>
+      {address
+        ? <p>Connected with address: {address}</p>
+        : <button onClick={connectMetaMask}>Connect with MetaMask</button>}
+    </div>
+  );
+};
+
+export default Profile;
