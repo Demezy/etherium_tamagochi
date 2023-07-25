@@ -12,6 +12,7 @@ function HomePage() {
       <div>
         <Stack>
           <Link to="/pet_stats">pet page</Link>
+          <Link to="/profile">Profile</Link>
         </Stack>
       </div>
     </>
