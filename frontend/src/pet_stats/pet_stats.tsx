@@ -10,12 +10,14 @@ type PetStatsProps = {
 
 export default function PetStats() {
   const props = useParams<PetStatsProps>();
-  const [petStats, setPetStats] = useState<PetData | "loading" | "error">(
-    "loading",
+  const [petStats, setPetStats] = useState<
+    PetData | "initial" | "loading" | "error"
+  >(
+    "initial",
   );
   useEffect(() => {
     async function getPet() {
-      if (petStats != "loading" && petStats != "error") return;
+      if (petStats != "initial") return;
       setPetStats("loading");
       console.log(props.petId);
       const pet = await PetsRepository.petById(parseInt(props.petId!));
@@ -24,8 +26,10 @@ export default function PetStats() {
     getPet().catch(() => setPetStats("error"));
   });
   switch (petStats) {
+    case ("initial"):
+      return <></>;
     case ("loading"):
-      return <>"Loading"</>;
+      return <>"Loading..."</>;
 
     case ("error"):
       return <NotFoundPage />;
