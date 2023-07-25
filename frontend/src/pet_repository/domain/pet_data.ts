@@ -1,4 +1,5 @@
 export default interface PetData {
+  id: number;
   owner: string;
   name: string;
   birthDay: number;
