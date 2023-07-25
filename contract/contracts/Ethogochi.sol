@@ -67,7 +67,7 @@ contract Ethogochi is Initializable {
     ) public returns (Pet) {
         Pet newPet = mintPet(childName, payable(msg.sender));
         newPet.setStrenght(
-            (pet1.strenth() + pet2.strenth() + newPet.strenth()) / 3
+            (pet1.speed() + pet2.speed() + newPet.speed()) / 3
         );
         newPet.setSpeed(
             (pet1.strenth() + pet2.strenth() + newPet.strenth()) / 3
