@@ -1,0 +1,144 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xBb7A599505A5b35A8a98032BaD4a725ED8DFae21",
+    "txHash": "0x1f56f1c0410c51e10058300eb3762d46f63f5c60c95994060998983e4b9bae33"
+  },
+  "proxies": [
+    {
+      "address": "0xC9613140ccB7278fbf135818F3fa6D63FD4e48AD",
+      "txHash": "0x5234f7a89e5225a5b4283350649f174c19db1bb21d570839d265fa3da582da7d",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "b1f41c2153755aa85c9a14bed6c58d72d91cc713499fa49f057b147e4caa17a5": {
+      "address": "0x5BAFB9c037e41692fde851e76A43EdAbB81306CE",
+      "txHash": "0xd7215c08fb317eebd29ecd7f8740a7e81343ca78e2b0b61eb63aed2c559e29b2",
+      "layout": {
+        "solcVersion": "0.8.19",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "contractOwner",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "Ethogochi",
+            "src": "contracts/Ethogochi.sol:10"
+          },
+          {
+            "label": "nextPetId",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "Ethogochi",
+            "src": "contracts/Ethogochi.sol:12"
+          },
+          {
+            "label": "nextCompetitionId",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "Ethogochi",
+            "src": "contracts/Ethogochi.sol:13"
+          },
+          {
+            "label": "pets",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_uint256,t_contract(Pet)1943)",
+            "contract": "Ethogochi",
+            "src": "contracts/Ethogochi.sol:15"
+          },
+          {
+            "label": "competitions",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint256,t_contract(Competition)1271)",
+            "contract": "Ethogochi",
+            "src": "contracts/Ethogochi.sol:16"
+          },
+          {
+            "label": "auctions",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_contract(Pet)1943,t_contract(Auction)736)",
+            "contract": "Ethogochi",
+            "src": "contracts/Ethogochi.sol:17"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_array(t_uint256)32_storage",
+            "contract": "Ethogochi",
+            "src": "contracts/Ethogochi.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)32_storage": {
+            "label": "uint256[32]",
+            "numberOfBytes": "1024"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(Auction)736": {
+            "label": "contract Auction",
+            "numberOfBytes": "20"
+          },
+          "t_contract(Competition)1271": {
+            "label": "contract Competition",
+            "numberOfBytes": "20"
+          },
+          "t_contract(Pet)1943": {
+            "label": "contract Pet",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_contract(Pet)1943,t_contract(Auction)736)": {
+            "label": "mapping(contract Pet => contract Auction)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_contract(Competition)1271)": {
+            "label": "mapping(uint256 => contract Competition)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_contract(Pet)1943)": {
+            "label": "mapping(uint256 => contract Pet)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}
